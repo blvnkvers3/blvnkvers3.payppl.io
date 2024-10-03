@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to my page!</h1>
+    </header>
+
+    <div class="container">
+        <img src="https://picsum.photos/200/300" alt="A random image">
+        <p>This is a simple webpage example with a random image.</p>
+    </div>
+
+</body>
+
+<script>
+    // Initialize the agent on page load.
+    const fpPromise = import('https://fpjscdn.net/v3/5QmfCogWEKdz6ei8EmKL')
+      .then(FingerprintJS => FingerprintJS.load())
+  
+    // Get the visitorId when you need it.
+    fpPromise
+      .then(fp => fp.get())
+      .then(result => {
+        const visitorId = result.visitorId
+        console.log(visitorId)
+      })
+  </script>
+  
+</html>
+
